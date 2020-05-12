@@ -1,8 +1,15 @@
 const express = require('express')
 const app = express()
 const path = require('path')
+const bodyParser = require('body-parser') 
+
+
 const port = process.env.PORT || 3000
 
+
+// BodyParser setup
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 
 // When we run the server our public file will also be ran
 const publicDirectoryPath = path.join(__dirname, './public')
